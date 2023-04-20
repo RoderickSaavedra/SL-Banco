@@ -5,7 +5,6 @@ com\siempreListobanco\banco\excepciones\RetiroSuperiorException.class
 com\siempreListobanco\banco\modelos\cons\Riesgo.class
 com\siempreListobanco\banco\dao\mapper\CuentaMapper.class
 com\siempreListobanco\banco\dao\CuentaDao.class
-com\siempreListobanco\banco\modelos\abstracto\Cliente.class
 com\siempreListobanco\banco\modelos\cons\Estatus.class
 com\siempreListobanco\banco\modelos\abstracto\Cuenta.class
 com\siempreListobanco\banco\operaciones\ITranferencia.class

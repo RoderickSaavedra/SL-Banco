@@ -1,6 +1,6 @@
 package com.siempreListobanco.banco.dao.mapper;
 
-import com.siempreListobanco.banco.modelos.abstracto.Cliente;
+import com.siempreListobanco.banco.modelos.Cliente;
 import com.siempreListobanco.banco.dao.mapper.interfaces.BaseMapper;
 
 import java.sql.ResultSet;

@@ -2,10 +2,7 @@ package com.siempreListobanco.banco;
 
 import com.siempreListobanco.banco.dao.CuentaDao;
 import com.siempreListobanco.banco.modelos.abstracto.Cuenta;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,10 +21,19 @@ public class ControllerOne {
         return cuentasDao.findAll();
     }
 
-    @GetMapping("getCuentas/{id}")
-    public Optional getCuenta(@PathVariable String id){
+    @GetMapping("obtenerCuenta/{id}")
+    public Optional<Cuenta> getCuenta(@PathVariable("id") String id){
         CuentaDao cuentaDao = new CuentaDao();
         return cuentaDao.findById(id);
     }
+
+    @PostMapping("/nuevaCuenta")
+    public boolean nuevaCuenta(@RequestBody Cuenta model){
+        CuentaDao cuentaDao = new CuentaDao();
+        cuentaDao.save(model);
+        return true;
+    }
+
+
 
 }

@@ -42,7 +42,7 @@ public class CuentaDao implements CrudDao<Cuenta, String> {
         String selectByIdQuery = "SELECT * FROM CUENTA WHERE ID = ?";
         Cuenta cuenta = null;
         try(PreparedStatement preparedStatement = connection.prepareStatement(selectByIdQuery)){
-            preparedStatement.setString(1, "ID");
+            preparedStatement.setString(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 cuenta = mapper.toModel(resultSet);

@@ -1,6 +1,6 @@
 package com.siempreListobanco.banco.dao;
 
-import com.siempreListobanco.banco.modelos.abstracto.Cliente;
+import com.siempreListobanco.banco.modelos.Cliente;
 import com.siempreListobanco.banco.bootstrap.DBConnection;
 import com.siempreListobanco.banco.dao.interfaces.CrudDao;
 import com.siempreListobanco.banco.dao.mapper.ClienteMapper;

@@ -18,22 +18,18 @@ public class Cuenta implements Serializable {
     private int MX_MOVIMIENTO;
     private int movimiento;
 
-    public Cuenta(){
-        this.IDENTIFICADOR = UUID.randomUUID().toString();
-        this.fechaCreacion = LocalDateTime.of(LocalDate.now(), LocalTime.now());
-        this.balance = 0.00;
-        this.nombre = "CUENTA PRE-ABIERTA";
-        this.tasa = null;
-        this.movimiento = 0;
-    }
+    public Cuenta(BuilderCuenta builderCuenta) {
+        /*if (builderCuenta.getTasa() == null){
+            throw new IllegalArgumentException("La Tasa es requerida");
+        }*/
+        this.IDENTIFICADOR = builderCuenta.getIDENTIFICADOR();
+        this.tasa = builderCuenta.getTasa();
+        this.balance = builderCuenta.getBalance();
+        this.nombre = builderCuenta.getNombre();
+        this.fechaCreacion = builderCuenta.getFechaCreacion();
+        this.movimiento = builderCuenta.getMovimiento();
+        this.MX_MOVIMIENTO = builderCuenta.getMX_MOVIMIENTO();
 
-    public Cuenta(Tasa tasa, double balance, String nombre, int MX_MOVIMIENTO) {
-        this.IDENTIFICADOR = UUID.randomUUID().toString();
-        this.fechaCreacion = LocalDateTime.of(LocalDate.now(), LocalTime.now());
-        this.tasa = tasa;
-        this.balance = balance;
-        this.nombre = nombre;
-        this.MX_MOVIMIENTO = MX_MOVIMIENTO;
     }
 
     public String getIDENTIFICADOR() {
@@ -105,5 +101,4 @@ public class Cuenta implements Serializable {
                         "\t " + fechaCreacion +
                         "\t " + nombre;
     }
-
 }
